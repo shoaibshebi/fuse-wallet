@@ -6,7 +6,10 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
-        themeClr: "#F5F5F5",
+        themeClr: "#F2F2F2",
+      },
+      fontFamily: {
+        mona: ["Mona-Sans"],
       },
     },
   },

@@ -35,7 +35,10 @@ export default function Header() {
           color="blue-gray"
           className="p-1 font-normal"
         >
-          <Link to="#" className="flex items-center text-black font-[18px]">
+          <Link
+            to="#"
+            className="flex items-center text-black text-[18px] font-medium"
+          >
             {item}
           </Link>
         </Typography>
@@ -44,23 +47,27 @@ export default function Header() {
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-3xl py-2 px-4 lg:px-8 lg:py-4 shadow-transparent bg-themeClr ">
+    <Navbar className="mx-auto max-w-screen-3xl py-2 px-4 lg:px-8 lg:py-4 shadow-transparent bg-themeClr border-none ">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
-        >
-          <img src={fuseLogo} alt="logo" className="h-4 sm:h-8 " />
+        <Typography className="mr-4 cursor-pointer py-1.5 font-medium">
+          <Link to="/">
+            <img src={fuseLogo} alt="logo" className="h-4 sm:h-8 " />
+          </Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
 
         <div className="flex justify-center items-center space-x-8">
           <FontAwesomeIcon
             icon={faTwitter}
-            className="hidden lg:inline-block text-center font-noraml text-black text-[30px]"
+            className="hidden lg:inline-block text-center font-noraml text-black text-[30px] cursor-pointer"
+            onClick={() => window.open("https://twitter.com/fuse_network")}
           />
-          <PrimaryButton size="sm">Build on Fuse</PrimaryButton>
+          <PrimaryButton size="">
+            <span onClick={() => window.open("https://docs.fuse.io/")}>
+              {" "}
+              Build on Fuse
+            </span>
+          </PrimaryButton>
         </div>
         <IconButton
           variant="text"
@@ -79,7 +86,9 @@ export default function Header() {
         <div className="container mx-auto">
           {navList}
           <div className="flex justify-center items-center space-x-8">
-            <PrimaryButton style="block w-full">Build on Fuse</PrimaryButton>
+            <PrimaryButton styles="block w-full">
+              <span className="normal-case"> Build on Fuse</span>
+            </PrimaryButton>
           </div>
         </div>
       </MobileNav>
